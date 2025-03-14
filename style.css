@@ -1,0 +1,56 @@
+body {
+    background-color: blue;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+}
+#deleteButton{
+    background-color: red;
+}
+#equalButton{
+    background-color: limegreen;
+}
+.numberButton{
+    background-color: brown;
+}
+p {
+    font-size: 30px;
+    margin-left: 5px;
+    transform: translateY(35px);
+}
+
+#numberShowedBox{
+    text-align: left;
+    height: 100px;
+    transform: scaleY(1.25);
+    transform-origin: bottom;
+    margin: 2px;
+    margin-bottom: 4px;
+    background-color: lightcyan;
+    border-radius: 2px;
+}
+#calculatorDiv {
+    display: inline-block;
+    background-color: white;
+    padding: 6px;
+    border-radius: 2px;
+}
+.button {
+    all: unset;
+    font-size: 30px;
+    margin-top: 4px;
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 2px;
+    transition: 0.2s;
+}
+.button:hover {
+    transition: 0.2s;
+    filter: brightness(90%) !important
+}
+.button:focus {
+    filter: brightness(70%) !important
+}
+
