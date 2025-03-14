@@ -1,39 +1,32 @@
-let numberShowed = document.querySelector("p")
-let mathList = [];
-document.querySelectorAll("button").forEach(button =>{
-    button.className = "button";
-    if (!isNaN(button.textContent.trim())) {
-        button.style.backgroundColor = "pink";
+function createTask() {
+    const taskInput = document.querySelector("input");
+    if (taskInput.value.trim() === "") {
+        alert ("digite algo");
+        return}
 
-   }button.addEventListener("click", function(){
-        button.focus();
-        setTimeout(() => {
-            button.blur();
-        }, 1);
-    })
+    const checkBoxInput = document.createElement ("input");
+        checkBoxInput.type = "checkbox";
+        checkBoxInput.id = "checkBoxInput";
+        
+    const taskList = document.querySelector ("ul");
+        
+    const task = document.createElement("li");
+        task.innerHTML = taskInput.value;
+        task.id = "task";
+
+    const span = document.createElement ("span");
+
+    const deleteButton = document.createElement("button");
+        deleteButton.id = "deleteButton"
+        deleteButton.addEventListener("click", function() {
+            span.remove();})
+    span.appendChild (checkBoxInput);
+    span.appendChild (task);
+    span.appendChild (deleteButton)
+    taskList.appendChild (span);
+    }
+    taskInput.value = "" 
+
+document.addEventListener("keypress", function (e){
+    if (e.key === "Enter") createTask();  
 })
-addEventListener("keydown", function(e){
-    if (!isNaN(e.key) || ["+", "-", "*", "/"].includes(e.key)){
-        mathList.push(e.key)
-        updateDisplay();
-   }if (e.key === "Backspace"){
-        deleteNumber()
-   }if (e.key === "Enter"){
-        calculate()
-   }
-})
-function calculator(button) {
-    let number = (button.textContent)
-    mathList.push(number)
-    updateDisplay();
-}function calculate() {
-    let calculatedExpression = mathList.join("")
-    let result = new Function("return " + calculatedExpression)();
-    numberShowed.textContent = result;
-    mathList = [result];
-}function deleteNumber(){
-    mathList.pop();
-    updateDisplay();
-}function updateDisplay(){
-    numberShowed.textContent = mathList.join("");
-}

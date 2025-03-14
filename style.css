@@ -1,56 +1,99 @@
 body {
-    background-color: blue;
-    align-items: center;
-    text-align: center;
-    font-family: sans-serif;
-}
-#deleteButton{
-    background-color: red;
-}
-#equalButton{
-    background-color: limegreen;
-}
-.numberButton{
-    background-color: brown;
-}
-p {
-    font-size: 30px;
-    margin-left: 5px;
-    transform: translateY(35px);
-}
-
-#numberShowedBox{
-    text-align: left;
-    height: 100px;
-    transform: scaleY(1.25);
-    transform-origin: bottom;
-    margin: 2px;
-    margin-bottom: 4px;
-    background-color: lightcyan;
-    border-radius: 2px;
-}
-#calculatorDiv {
-    display: inline-block;
-    background-color: white;
-    padding: 6px;
-    border-radius: 2px;
-}
-.button {
-    all: unset;
-    font-size: 30px;
-    margin-top: 4px;
-    width: 80px;
-    height: 50px;
-    cursor: pointer;
     background-color: whitesmoke;
-    border-radius: 2px;
-    transition: 0.2s;
-}
-.button:hover {
-    transition: 0.2s;
-    filter: brightness(90%) !important
-}
-.button:focus {
-    filter: brightness(70%) !important
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
 }
 
+.inputBox, ul {
+    border-radius: 20px;
+    background-color: snow;
+}
+.inputBox {
+    padding: 10px;
+    margin-top: 40px;
+    display: inline-block;
+}
+ul {
+    text-align: left;
+    list-style: none;
+    padding-left: 15px;
+    margin: 15px auto;
+    max-width: 515px;
+    font-size: 30px;
+}
+h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+#taskInput, #createTaskButton {
+    border: none;
+    font-size: 30px;
+    border-radius: 15px;
+    padding: 15px;
+}
+#taskInput {
+    background-color: whitesmoke;
+    transition: 0.1s;
+}
+#taskInput:focus{
+    background-color: antiquewhite;
+}
+#createTaskButton {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+#createTaskButton:hover{
+    background-color: antiquewhite;
+}
+#checkBoxInput{
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+#checkBoxInput:hover {
+    transform: scale(1.10);
+}
+#checkBoxInput:checked + #task {
+    text-decoration: line-through black;
+    opacity: 0.2;
+    transform: scale(0.95);
+    transition: 0.3s;
+}  
+#task {
+    transition: 0.3s;
+}
+span {
+    display: flex;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    transition: 0.1s;
+}
+span:hover {
+    background-color: lightgrey;
+}
+#deleteButton {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    transition: 0.5s;
+    right: 504px;
+}
+#deleteButton::after {
+    content: 'x';
+    color: black;
+    font-size: 15px;
+}
+#deleteButton:hover{
+    background-color: grey;
+    transform: scale(1.05);
+}

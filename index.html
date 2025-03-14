@@ -1,32 +1,14 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Calculadora</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id = "calculatorDiv">
-            <div id = "numberShowedBox"><p></p></div>
-            <button onclick = "calculator(this)">7</button>
-            <button onclick = "calculator(this)">8</button>
-            <button onclick = "calculator(this)">9</button>
-            <button onclick = "calculator(this)">+</button>
-            <br>
-            <button onclick = "calculator(this)">4</button>
-            <button onclick = "calculator(this)">5</button>
-            <button onclick = "calculator(this)">6</button>
-            <button onclick = "calculator(this)">-</button>
-            <br>
-            <button onclick = "calculator(this)">1</button>
-            <button onclick = "calculator(this)">2</button>
-            <button onclick = "calculator(this)">3</button>
-            <button onclick = "calculator(this)">*</button>
-            <br>
-            <button id = "deleteButton" onclick = "deleteNumber()">C</button>
-            <button onclick = "calculator(this)">0</button>
-            <button id = "equalButton" onclick = "calculate()">=</button>
-            <button onclick = "calculator(this)">/</button>
-        </div>
-        <script src = "code.js"></script>
-    </body>
-</html>
+<head>
+    <title>Lista de Tarefas</title>                                     
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "inputBox">
+        <h1>Lista de tarefas</h1>
+        <input type="text" id = "taskInput" placeholder="Digite a tarefa" maxlength="25">
+        <button type = "button" id = "createTaskButton" onclick = "createTask()">Criar</button>
+    </div>
+    <ul id = "taskList"></ul>
+    <script src = "code.js"></script>
+</body>
